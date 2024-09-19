@@ -26,20 +26,14 @@ Before running this project, ensure you have the following installed:
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/Nikhil-Pawar11/Dialogflow-bakery-chatbot.git
+   git clone https://github.com/Nikhil-Pawar11/Dialogflow-Bakery-Chatbot.git
 
-
-2. Clone this repository:
-
-   ```bash
-   cd bakery
-
-3. Install the required Python packages:
+2. Install the required Python packages:
 
     ```bash
     pip install -r requirements.txt
 
-4. Set up the MySQL database:.
+3. Set up the MySQL database:.
 
 
     - Import the provided SQL script from the sql/ folder to set up the necessary database tables.
