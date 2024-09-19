@@ -1,0 +1,117 @@
+# Dialogflow Setup Instructions for Bakery Chatbot
+
+1. Intents
+
+1.1 menu Intent
+- Training Phrases:
+  - "Show me the menu"
+  - "What do you have?"
+  - "I'd like to see your menu"
+  
+- Response:
+Here's our menu:
+Black Forest Cake - $10.00
+Cheesecake - $8.50
+Lemon Drizzle Cake - $7.00
+Red Velvet Cake - $9.00
+Carrot Cake - $6.50
+Chocolate Eclair - $4.00
+Fruit Tart - $5.50
+Cupcake - $3.00
+Brownie - $2.50
+
+- Incoming Context: None
+- Outgoing Context: None
+
+---
+
+1.2 new.order Intent
+- Training Phrases:
+  - "I want to place a new order"
+  - "Start a new order"
+  - "Create a new order"
+
+- Response:
+Great! What would you like to add first?
+Your new order has been created with order ID {new_order_id}. What would you like to order?
+
+- Incoming Context: None
+- Outgoing Context: order_context (Lifespan: 5)
+
+---
+
+1.3 order.add Intent
+- Training Phrases:
+  - "I want to add {quantity} {menu_item} to my order"
+  - "Add {quantity} {menu_item}"
+  - "Can I have {quantity} {menu_item}?"
+
+- Response:
+Added {quantity} {menu_item} to your order.
+
+- Incoming Context: order_context
+- Outgoing Context: order_context (Lifespan: 5)
+
+---
+
+1.4 order.check Intent
+- Training Phrases:
+  - "Complete my order"
+  - "Finish my order"
+  - "I want to complete the order"
+
+- Response:
+  _Enter your order ID
+
+- Incoming Context: None
+- Outgoing Context: order_check (Lifespan: 5)
+
+1.4 order.complete Intent
+- Training Phrases:
+  - "6d19de84-780b-4b42-802a-c4f5431be8d4"
+  - "b234cdf4-d2e9-4698-960e-18828fb4a8c9"
+  - "c9575018-a7b8-410b-9879-07228db92e73"
+
+- Response:
+  _Here are the details for order ID {order_id}:\n{order_details}
+
+
+- Incoming Context: order_check
+- Outgoing Context: None
+
+---
+
+2. Entities
+
+2.1 menu_items Entity
+- Synonyms:
+  - Black Forest Cake: "black forest", "forest cake"
+  - Cheesecake: "cheese cake"
+  - Lemon Drizzle Cake: "lemon cake", "drizzle cake"
+  - Red Velvet Cake: "red velvet", "velvet cake"
+  - Carrot Cake: "carrot", "cake"
+  - Chocolate Eclair: "eclair", "choco eclair"
+  - Fruit Tart: "tart", "fruit"
+  - Cupcake: "cup cake", "small cake"
+  - Brownie: "chocolate brownie"
+
+---
+
+3. Contexts
+- order_context: This is used to track the user’s current order. The new.order intent sets this context with a lifespan of 5, and it’s referenced in the order.add and order.complete intents.
+
+---
+
+4. Fuzzy Logic and Regular Expressions
+
+4.1 Regex for UUID
+- Regular expression to capture a UUID format:
+[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+
+---
+
+5. Training Phrases
+To set up the intents, enter these training phrases in Dialogflow for each intent as defined above.
+
+6. Response Setup
+For each intent in Dialogflow, enter the respective response text, such as the menu response for the menu intent or the order confirmation in new.order, order.add, and order.complete.
