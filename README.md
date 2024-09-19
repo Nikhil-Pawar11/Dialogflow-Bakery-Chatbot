@@ -104,5 +104,3 @@ The project provides a RESTful API to handle orders. Below are some example endp
 
 Feel free to submit issues or pull requests. Contributions are always welcome.
 
-## License
-This project is licensed under the MIT License.
