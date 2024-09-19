@@ -26,7 +26,7 @@ Before running this project, ensure you have the following installed:
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/yourusername/bakery-chatbot.git
+   git clone https://github.com/Nikhil-Pawar11/Dialogflow-bakery-chatbot.git
 
 
 2. Clone this repository:
