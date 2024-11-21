@@ -65,7 +65,7 @@ Before running this project, ensure you have the following installed:
 
         USE bakerydb;
 
-        -- Create food_items, orders, and order_tracking tables as described in the provided SQL script.
+orders, and order_tracking tables as described in the provided SQL script.
 
 
 
